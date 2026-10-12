@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reina Bass Pro | Tienda de pesca de black bass y ciprínidos</title>
+  <meta name="description" content="Tienda especializada en pesca de depredadores y ciprínidos: cañas, carretes, señuelos y cebos de las mejores marcas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<!-- Iconos SVG reutilizables -->
+<svg class="sprite" width="0" height="0" aria-hidden="true" focusable="false">
+  <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="m22 6-10 7L2 6"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+  <symbol id="i-truck" viewBox="0 0 24 24"><path d="M1 3h15v13H1zM16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></symbol>
+  <symbol id="i-return" viewBox="0 0 24 24"><path d="M23 4v6h-6M1 20v-6h6"/><path d="M3.5 9a9 9 0 0 1 14.9-3.4L23 10M1 14l4.6 4.4A9 9 0 0 0 20.5 15"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-headset" viewBox="0 0 24 24"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1v-6h3zM3 19a2 2 0 0 0 2 2h1v-6H3z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><polygon points="12 2 15.1 8.6 22 9.3 16.8 14 18.2 21 12 17.5 5.8 21 7.2 14 2 9.3 8.9 8.6"/></symbol>
+  <symbol id="i-fish" viewBox="0 0 24 24"><path d="M2 12c3-5 8-7 13-5l3 2 4-3v12l-4-3-3 2c-5 2-10 0-13-5z"/><circle cx="15" cy="11" r="1"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+</svg>
+
+<!-- ===== Barra superior ===== -->
+<div class="topbar">
+  <div class="container topbar__inner">
+    <ul class="topbar__list">
+      <li class="topbar__item"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg> Envío gratis a partir de 60&nbsp;€</li>
+      <li class="topbar__item"><svg class="icon" aria-hidden="true"><use href="#i-return"/></svg> 30 días para devoluciones</li>
+    </ul>
+    <ul class="topbar__list">
+      <li><a class="topbar__link" href="index.html#contacto">Contacto</a></li>
+      <li><a class="topbar__link" href="index.html#consejos">Consejos de pesca</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== Cabecera ===== -->
+<header class="header">
+  <div class="container header__inner">
+    <a class="logo" href="index.html" aria-label="Reina Bass Pro, ir al inicio">
+      <span class="logo__mark"><svg class="icon" aria-hidden="true"><use href="#i-fish"/></svg></span>
+      <span class="logo__text">REINA BASS PRO</span>
+    </a>
+    <form class="search" role="search" action="categoria.html" method="get">
+      <label class="sr-only" for="q">Buscar productos</label>
+      <input class="search__input" id="q" name="q" type="search" placeholder="Busca cañas, carretes, señuelos…" autocomplete="off">
+      <button class="search__btn" type="submit" aria-label="Buscar"><svg class="icon" aria-hidden="true"><use href="#i-search"/></svg></button>
+    </form>
+    <div class="header__actions">
+      <a class="icon-btn" href="#" aria-label="Carrito de la compra"><svg class="icon" aria-hidden="true"><use href="#i-cart"/></svg><span class="icon-btn__badge" data-cart-count hidden>0</span></a>
+      <a class="icon-btn" href="#" aria-label="Mi cuenta"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Navegación secundaria ===== -->
+<nav class="subnav" aria-label="Secciones de la tienda">
+  <div class="container subnav__inner">
+    <ul class="subnav__list">
+      <li><a class="subnav__link subnav__link--offer" href="categoria.html?oferta=1">OFERTAS ▼</a></li>
+      <li><a class="subnav__link" href="categoria.html">MARCAS ▼</a></li>
+      <li><a class="subnav__link" href="categoria.html">NOVEDADES ▼</a></li>
+      <li><a class="subnav__link" href="categoria.html">MATERIAL ▼</a></li>
+      <li><a class="subnav__link" href="index.html#contacto">CONTACTO</a></li>
+    </ul>
+    <p class="subnav__hours"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> Lun–Sáb · 10:00–20:00</p>
+  </div>
+</nav>
+
+<main id="contenido">
+
+  <!-- ===== Portada ===== -->
+  <section class="hero" aria-labelledby="hero-titulo">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <p class="eyebrow"><svg class="icon" aria-hidden="true"><use href="#i-fish"/></svg> Tu tienda de pesca</p>
+        <h1 class="hero__title" id="hero-titulo">Equípate para pescar como una <em class="hero__highlight">reina</em></h1>
+        <p class="hero__lead">Cañas, carretes, señuelos y cebos para depredadores y ciprínidos. Material probado en el agua y asesoramiento de pescadores que viven por y para el black bass.</p>
+        <div class="hero__cta">
+          <a class="btn" href="categoria.html">Ver el catálogo <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn--light" href="#categorias">Elige tu modalidad</a>
+        </div>
+        <ul class="stats">
+          <li class="stats__item"><strong class="stats__value">+500</strong><span class="stats__label">Productos en catálogo</span></li>
+          <li class="stats__item"><strong class="stats__value">24/48 h</strong><span class="stats__label">Entrega en península</span></li>
+          <li class="stats__item"><strong class="stats__value">4,8/5</strong><span class="stats__label">Valoración de clientes</span></li>
+        </ul>
+      </div>
+      <figure class="hero__visual">
+        <div class="hero__frame"><img class="hero__img" src="img/depredadores.png" alt="Black bass y lucio bajo el agua entre la vegetación" width="640" height="520"></div>
+        <figcaption class="hero__sticker"><svg class="icon hero__sticker-icon" aria-hidden="true"><use href="#i-shield"/></svg><span>Compra segura<small class="hero__sticker-note">Pago protegido</small></span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== Categorías (columnas del diseño) ===== -->
+  <section class="categories" id="categorias" aria-label="Modalidades de pesca">
+    <article class="category">
+      <div class="category__frame">
+        <span class="category__tag">MODALIDAD 01</span>
+        <img class="category__img" src="img/depredadores.png" alt="Black bass y lucio nadando entre troncos" width="640" height="520" loading="lazy">
+      </div>
+      <div class="category__info">
+        <h2 class="category__title">Depredadores</h2>
+        <p class="category__text">Spinning y casting para black bass, lucio, lucioperca y siluro. Señuelos, cañas con acción rápida y carretes de gran recuperación.</p>
+        <ul class="chips"><li class="chips__item">Black bass</li><li class="chips__item">Lucio</li><li class="chips__item">Lucioperca</li><li class="chips__item">Siluro</li></ul>
+        <a class="btn" href="categoria.html">DEPREDADORES</a>
+      </div>
+    </article>
+    <article class="category">
+      <div class="category__frame">
+        <span class="category__tag">MODALIDAD 02</span>
+        <img class="category__img" src="img/ciprinidos.png" alt="Carpa y barbo en un río de aguas claras" width="640" height="520" loading="lazy">
+      </div>
+      <div class="category__info">
+        <h2 class="category__title">Ciprínidos</h2>
+        <p class="category__text">Todo para carpa, barbo y carpín: boilies, cebos, montajes, cañas de feeder y accesorios para largas jornadas junto al agua.</p>
+        <ul class="chips"><li class="chips__item">Carpa</li><li class="chips__item">Barbo</li><li class="chips__item">Carpín</li><li class="chips__item">Tenca</li></ul>
+        <a class="btn" href="categoria.html">CIPRÍNIDOS</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- ===== Ventajas ===== -->
+  <section aria-label="Ventajas de comprar con nosotros">
+    <ul class="perks">
+      <li class="perk"><span class="perk__icon"><svg class="icon" aria-hidden="true"><use href="#i-truck"/></svg></span><div><strong class="perk__title">Envío gratis</strong><span class="perk__text">En pedidos desde 60&nbsp;€</span></div></li>
+      <li class="perk"><span class="perk__icon"><svg class="icon" aria-hidden="true"><use href="#i-return"/></svg></span><div><strong class="perk__title">Devolución fácil</strong><span class="perk__text">30 días sin complicaciones</span></div></li>
+      <li class="perk"><span class="perk__icon"><svg class="icon" aria-hidden="true"><use href="#i-shield"/></svg></span><div><strong class="perk__title">Pago seguro</strong><span class="perk__text">Tarjeta, Bizum y transferencia</span></div></li>
+      <li class="perk"><span class="perk__icon"><svg class="icon" aria-hidden="true"><use href="#i-headset"/></svg></span><div><strong class="perk__title">Asesoramiento</strong><span class="perk__text">Te ayudamos a elegir</span></div></li>
+    </ul>
+  </section>
+
+  <!-- ===== Productos destacados ===== -->
+  <section class="section" id="destacados" aria-labelledby="destacados-titulo">
+    <div class="container">
+      <header class="section__header">
+        <div>
+          <h2 class="section__title" id="destacados-titulo">Productos destacados</h2>
+          <p class="section__subtitle">Lo más buscado por nuestros pescadores esta temporada.</p>
+        </div>
+        <a class="link-arrow" href="categoria.html">Ver todo <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </header>
+      <div class="products">
+<article class="card" href="producto.html">
+  <a class="card__media" href="producto.html"><img class="card__img" src="img/swimbait.png" alt="Señuelo swimbait Pato Hard Sikkario" loading="lazy"></a>
+  <div class="card__body">
+    <p class="card__brand">Sikkario</p>
+    <h3 class="card__title"><a href="producto.html">Pato Hard Sikkario</a></h3>
+    <p class="rating"><span class="rating__stars" role="img" aria-label="5 de 5 estrellas"><svg class="icon rating__star" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon rating__star" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon rating__star" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon rating__star" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon rating__star" aria-hidden="true"><use href="#i-star"/></svg></span> <span class="rating__text">(24)</span></p>
+    <p class="price">635€</p>
+    <p class="stock stock--low">Últimas unidades</p>
+  </div>
+  <button type="button" class="btn btn--sm card__btn" data-add data-name="Pato Hard Sikkario">COMPRAR</button>
+</article>
+<article class="card">
+  <span class="badge badge--new">NOVEDAD</span>
+  <a class="card__media" href="producto.html"><img class="card__img" src="img/cana.png" alt="Caña de spinning Abu García" loading="lazy"></a>
+  <div class="card__body">
+    <p class="card__brand">Abu Garcia</p>
+    <h3 class="card__title"><a href="producto.html">Caña Abu</a></h3>
+    <p class="rating"><span class="rating__stars" role="img" aria-label="4 de 5 estrellas"><svg class="icon rating__star" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon rating__star" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon rating__star" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon rating__star" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon rating__star rating__star--off" aria-hidden="true"><use href="#i-star"/></svg></span> <span class="rating__text">(58)</span></p>
+    <p class="price">90€</p>
+    <p class="stock">En stock</p>
+  </div>
+  <button type="button" class="btn btn--sm card__btn" data-add data-name="Caña Abu">COMPRAR</button>
+</article>
+<article class="card">
+  <span class="badge">-11%</span>
+  <a class="card__media" href="producto.html"><img class="card__img" src="img/cangrejo.png" alt="Señuelo cangrejo Zoom" loading="lazy"></a>
+  <div class="card__body">
+    <p class="card__brand">Zoom</p>
+    <h3 class="card__title"><a href="producto.html">Cangrejo Zoom</a></h3>
+    <p class="rating"><span class="rating__stars" role="img" aria-label="5 de 5 estrellas"><svg class="icon rating__star" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon rating__star" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon rating__star" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon rating__star" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon rating__star" aria-hidden="true"><use href="#i-star"/></svg></span> <span class="rating__text">(112)</span></p>
+    <p class="price"><s class="price__old">10€</s> <span class="price__now">8,95€</span></p>
+    <p class="stock">En stock</p>
+  </div>
+  <button type="button" class="btn btn--sm card__btn" data-add data-name="Cangrejo Zoom">COMPRAR</button>
+</article>
+<article class="card">
+  <a class="card__media" href="producto.html"><img class="card__img" src="img/carrete.png" alt="Carrete de spinning Major" loading="lazy"></a>
+  <div class="card__body">
+    <p class="card__brand">Major</p>
+    <h3 class="card__title"><a href="producto.html">Carrete Major</a></h3>
+    <p class="rating"><span class="rating__stars" role="img" aria-label="4 de 5 estrellas"><svg class="icon rating__star" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon rating__star" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon rating__star" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon rating__star" aria-hidden="true"><use href="#i-star"/></svg><svg class="icon rating__star rating__star--off" aria-hidden="true"><use href="#i-star"/></svg></span> <span class="rating__text">(41)</span></p>
+    <p class="price">120€</p>
+    <p class="stock">En stock</p>
+  </div>
+  <button type="button" class="btn btn--sm card__btn" data-add data-name="Carrete Major">COMPRAR</button>
+</article>
+</div>
+    </div>
+  </section>
+
+  <!-- ===== Oferta ===== -->
+  <section class="section section--sand" aria-labelledby="promo-titulo">
+    <div class="container">
+      <div class="promo">
+        <div class="promo__text">
+          <p class="eyebrow eyebrow--light">Oferta de temporada</p>
+          <h2 class="promo__title" id="promo-titulo">Prepara la temporada de black bass</h2>
+          <p class="promo__lead">Ahorra en señuelos, cebos y accesorios seleccionados. Cantidades limitadas hasta fin de existencias.</p>
+          <a class="btn btn--light" href="categoria.html?oferta=1">Ver ofertas <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <div class="promo__side">
+          <p class="promo__label">Hasta</p>
+          <p class="promo__value">-30%</p>
+          <p class="promo__label">Código para tu primer pedido:</p>
+          <p class="promo__code">BIENVENIDO10</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Marcas ===== -->
+  <section class="section" aria-labelledby="marcas-titulo">
+    <div class="container">
+      <header class="section__header">
+        <div>
+          <h2 class="section__title" id="marcas-titulo">Marcas que trabajamos</h2>
+          <p class="section__subtitle">Material de confianza para cada técnica y cada presupuesto.</p>
+        </div>
+      </header>
+      <ul class="brands">
+        <li class="brands__item">ABU GARCIA</li><li class="brands__item">ZOOM</li><li class="brands__item">MAJOR</li>
+        <li class="brands__item">SIKKARIO</li><li class="brands__item">DAIWA</li><li class="brands__item">SHIMANO</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== Consejos ===== -->
+  <section class="section section--white" id="consejos" aria-labelledby="consejos-titulo">
+    <div class="container">
+      <header class="section__header">
+        <div>
+          <h2 class="section__title" id="consejos-titulo">Consejos de pesca</h2>
+          <p class="section__subtitle">Guías rápidas para sacar más partido a tu material.</p>
+        </div>
+      </header>
+      <div class="tips">
+        <article class="tip">
+          <div class="tip__top"><span class="tip__tag">Depredadores</span></div>
+          <div class="tip__body">
+            <h3 class="tip__title">Cómo elegir tu primera caña de spinning</h3>
+            <p class="tip__text">Longitud, potencia y acción: qué significan los números y cuál te conviene según el señuelo.</p>
+            <a class="link-arrow tip__link" href="producto.html">Leer más <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+        <article class="tip">
+          <div class="tip__top tip__top--green"><span class="tip__tag">Señuelos</span></div>
+          <div class="tip__body">
+            <h3 class="tip__title">Swimbaits y crawfish: cuándo usar cada uno</h3>
+            <p class="tip__text">Aprende a leer la temperatura del agua y la actividad del pez para acertar con el señuelo.</p>
+            <a class="link-arrow tip__link" href="categoria.html">Leer más <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+        <article class="tip">
+          <div class="tip__top tip__top--tan"><span class="tip__tag">Ciprínidos</span></div>
+          <div class="tip__body">
+            <h3 class="tip__title">Cebado para carpa y barbo en río</h3>
+            <p class="tip__text">Mezclas, cantidades y puntos de cebado para mantener a los peces comiendo toda la jornada.</p>
+            <a class="link-arrow tip__link" href="categoria.html">Leer más <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contacto + formulario ===== -->
+  <section class="section section--sand" id="contacto" aria-labelledby="contacto-titulo">
+    <div class="container">
+      <header class="section__header">
+        <div>
+          <h2 class="section__title" id="contacto-titulo">Contacta con nosotros</h2>
+          <p class="section__subtitle">¿Dudas sobre qué material elegir o sobre un pedido? Escríbenos y te respondemos lo antes posible.</p>
+        </div>
+      </header>
+
+      <div class="contact">
+        <aside class="contact__info" aria-labelledby="contacto-datos">
+          <h3 class="contact__heading" id="contacto-datos">Datos de la tienda</h3>
+          <address>
+            <dl class="contact__list">
+              <div class="contact__item">
+                <span class="contact__icon"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg></span>
+                <div><dt class="contact__term">Teléfono</dt><dd class="contact__data"><a href="tel:+34600000000">+34 600 000 000</a></dd></div>
+              </div>
+              <div class="contact__item">
+                <span class="contact__icon"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></span>
+                <div><dt class="contact__term">Correo</dt><dd class="contact__data"><a href="mailto:contacto@tudominio.es">contacto@tudominio.es</a></dd></div>
+              </div>
+              <div class="contact__item">
+                <span class="contact__icon"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg></span>
+                <div><dt class="contact__term">Ubicación</dt><dd class="contact__data">Tu dirección, Tu ciudad</dd></div>
+              </div>
+              <div class="contact__item">
+                <span class="contact__icon"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
+                <div><dt class="contact__term">Horario</dt><dd class="contact__data">Lun–Sáb · 10:00–20:00</dd></div>
+              </div>
+            </dl>
+          </address>
+          <p class="contact__note">Respondemos en menos de 24 horas laborables.</p>
+        </aside>
+
+        <form class="form contact__form" name="contacto" method="post" data-netlify="true" netlify-honeypot="bot-field" data-netlify-form>
+          <input type="hidden" name="form-name" value="contacto">
+          <p class="sr-only"><label>No rellenar: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+          <fieldset class="form__fieldset">
+            <legend class="form__legend">Tus datos</legend>
+            <div class="form__row">
+              <div class="form__field">
+                <label class="form__label form__label--required" for="nombre">Nombre y apellidos</label>
+                <input class="form__control" type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="name" minlength="2" required>
+              </div>
+              <div class="form__field">
+                <label class="form__label form__label--required" for="email">Correo electrónico</label>
+                <input class="form__control" type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="email" required>
+              </div>
+            </div>
+            <div class="form__row">
+              <div class="form__field">
+                <label class="form__label" for="telefono">Teléfono <span class="form__optional">(opcional)</span></label>
+                <input class="form__control" type="tel" id="telefono" name="telefono" placeholder="600 000 000" autocomplete="tel" pattern="[0-9 +]{9,15}" inputmode="tel">
+              </div>
+              <div class="form__field">
+                <label class="form__label form__label--required" for="motivo">Motivo de la consulta</label>
+                <select class="form__control" id="motivo" name="motivo" required>
+                  <option value="" selected disabled>Elige una opción…</option>
+                  <optgroup label="Compras">
+                    <option value="informacion-producto">Información de un producto</option>
+                    <option value="estado-pedido">Estado de mi pedido</option>
+                    <option value="cambios-devoluciones">Cambios y devoluciones</option>
+                  </optgroup>
+                  <optgroup label="Asesoramiento">
+                    <option value="elegir-material">Ayuda para elegir material</option>
+                    <option value="otro">Otro motivo</option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form__fieldset">
+            <legend class="form__legend">Tu consulta</legend>
+            <fieldset class="form__group">
+              <legend class="form__label">Modalidad que practicas</legend>
+              <div class="form__options">
+                <label class="choice"><input class="choice__input choice__input--radio" type="radio" name="modalidad" value="depredadores" checked> Depredadores</label>
+                <label class="choice"><input class="choice__input choice__input--radio" type="radio" name="modalidad" value="ciprinidos"> Ciprínidos</label>
+                <label class="choice"><input class="choice__input choice__input--radio" type="radio" name="modalidad" value="ambas"> Ambas</label>
+              </div>
+            </fieldset>
+            <div class="form__field">
+              <label class="form__label form__label--required" for="mensaje">Mensaje</label>
+              <textarea class="form__control form__control--area" id="mensaje" name="mensaje" rows="5" minlength="10" maxlength="600" placeholder="Cuéntanos qué necesitas…" required data-count-target="mensaje-contador"></textarea>
+              <p class="form__hint"><span>Mínimo 10 caracteres</span><output id="mensaje-contador" for="mensaje">0 / 600</output></p>
+            </div>
+          </fieldset>
+
+          <div class="form__options">
+            <label class="choice"><input class="choice__input" type="checkbox" name="privacidad" value="aceptada" required> <span>Acepto la <a class="choice__link" href="#">política de privacidad</a> *</span></label>
+            <label class="choice"><input class="choice__input" type="checkbox" name="suscripcion" value="si"> Quiero recibir ofertas y novedades</label>
+          </div>
+
+          <div class="form__actions">
+            <button class="btn" type="submit">ENVIAR MENSAJE <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+            <button class="btn btn--light" type="reset">Borrar</button>
+          </div>
+          <p class="form__status" data-status-for="contacto" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== Newsletter ===== -->
+<section class="newsletter" aria-labelledby="newsletter-titulo">
+  <div class="container newsletter__inner">
+    <div class="newsletter__text">
+      <h2 class="newsletter__title" id="newsletter-titulo">Entérate antes de las ofertas</h2>
+      <p class="newsletter__lead">Novedades, ofertas y consejos de pesca en tu correo. Sin spam.</p>
+    </div>
+    <div class="newsletter__action">
+      <form class="newsletter__form" name="newsletter" method="post" data-netlify="true" data-netlify-form>
+        <input type="hidden" name="form-name" value="newsletter">
+        <label class="sr-only" for="newsletter-email">Correo electrónico</label>
+        <input class="newsletter__input" id="newsletter-email" type="email" name="email" placeholder="tu@correo.com" autocomplete="email" required>
+        <button class="newsletter__btn" type="submit">SUSCRIBIRME</button>
+      </form>
+      <p class="form__status" data-status-for="newsletter" role="status"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Pie de página ===== -->
+<footer class="footer" id="pie">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <a class="logo" href="index.html"><span class="logo__mark"><svg class="icon" aria-hidden="true"><use href="#i-fish"/></svg></span><span class="logo__text">REINA BASS PRO</span></a>
+      <p class="footer__about">Tu tienda de pesca deportiva especializada en black bass, depredadores y ciprínidos.</p>
+    </div>
+    <nav class="footer__col" aria-label="Tienda">
+      <h2 class="footer__heading">Tienda</h2>
+      <ul class="footer__list">
+        <li><a href="categoria.html">Depredadores</a></li>
+        <li><a href="categoria.html">Ciprínidos</a></li>
+        <li><a href="categoria.html?oferta=1">Ofertas</a></li>
+        <li><a href="categoria.html">Novedades</a></li>
+      </ul>
+    </nav>
+    <nav class="footer__col" aria-label="Ayuda">
+      <h2 class="footer__heading">Ayuda</h2>
+      <ul class="footer__list">
+        <li><a href="#">Envíos y entregas</a></li>
+        <li><a href="#">Cambios y devoluciones</a></li>
+        <li><a href="#">Preguntas frecuentes</a></li>
+        <li><a href="#">Política de privacidad</a></li>
+      </ul>
+    </nav>
+    <div class="footer__col footer__col--wide">
+      <h2 class="footer__heading">Contacto</h2>
+      <ul class="footer__list footer__list--contact">
+        <li><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg> <a href="tel:+34600000000">+34 600 000 000</a></li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg> Tu dirección, Tu ciudad</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg> Lun–Sáb · 10:00–20:00</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <div class="container footer__bottom-inner">
+      <p>© <span data-year>2026</span> <strong>REINA BASS PRO</strong>. Todos los derechos reservados.</p>
+      <ul class="footer__legal"><li><a href="#">Aviso legal</a></li><li><a href="#">Cookies</a></li></ul>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" data-toast role="status" aria-live="polite"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><span></span></div>
+<script src="script.js"></script>
+</body>
+</html>
