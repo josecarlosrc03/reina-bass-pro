@@ -144,6 +144,61 @@
     </ul>
   </section>
 
+<!-- ===== Experiencia Multimedia ===== -->
+  <section class="section" aria-labelledby="media-titulo">
+    <div class="container">
+      
+      <header class="section__header">
+        <div>
+          <h2 class="section__title" id="media-titulo">Experiencia audiovisual</h2>
+          <p class="section__subtitle">Mira nuestros señuelos en acción y escucha los consejos del embalse.</p>
+        </div>
+      </header>
+      
+      <!-- Contenedor flex: Divide la pantalla en dos columnas en PC y se apila en móvil -->
+      <div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: center; justify-content: center;">
+        
+        <!-- MITAD IZQUIERDA: VÍDEO -->
+        <div style="flex: 1; min-width: 280px; display: flex; justify-content: center;">
+          <!-- Caja del vídeo con max-width: 220px para controlar el tamaño -->
+          <div style="border: 2px solid var(--color-navy); box-shadow: 8px 8px 0 var(--color-navy); background: var(--color-paper); padding: 10px; width: 100%; max-width: 220px;">
+            <video width="100%" style="display: block;" controls poster="img/depredadores.png">
+              <source src="videoplayback.mp4" type="video/mp4">
+              Tu navegador no soporta el formato de vídeo.
+            </video>
+          </div>
+        </div>
+
+        <!-- MITAD DERECHA: AUDIO -->
+        <div style="flex: 1; min-width: 280px; display: flex; flex-direction: column; gap: 16px;">
+          <div style="display: inline-flex; align-items: center; gap: 14px;">
+            <!-- Icono decorativo de nota musical -->
+            <div style="display: grid; place-items: center; width: 44px; height: 44px; background: var(--color-green); color: white; border: 2px solid var(--color-navy); box-shadow: 3px 3px 0 var(--color-navy);">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18V5l12-2v13"></path>
+                <circle cx="6" cy="18" r="3"></circle>
+                <circle cx="18" cy="16" r="3"></circle>
+              </svg>
+            </div>
+            <h3 style="font-size: 24px; font-weight: 800; margin: 0;">Consejos de expertos</h3>
+          </div>
+          <p style="color: #475569; margin: 0; font-size: 16px; max-width: 400px;">Escucha los consejos de nuestros expertos mientras preparas tu equipo o tu carrito de compras.</p>
+          
+          <!-- Reproductor de Audio -->
+          <div style="margin-top: 8px;">
+            <audio controls style="width: 100%; max-width: 350px;">
+              <!-- Asegúrate de tener el archivo audio.mp3 en tu carpeta -->
+              <source src="Surfcasting_Los_Cu_aos_mp3.mp3" type="audio/mpeg">
+              Tu navegador no soporta el audio.
+            </audio>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
   <!-- ===== Productos destacados ===== -->
   <section class="section" id="destacados" aria-labelledby="destacados-titulo">
     <div class="container">

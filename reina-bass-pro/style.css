@@ -608,3 +608,22 @@ legend.filters__title { float: left; width: 100%; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; scroll-behavior: auto !important; }
 }
+/* Ajuste para alinear la licencia Creative Commons en el footer */
+.footer__bottom-inner p {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer__bottom-inner a[rel="license"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+
+.footer__bottom-inner a[rel="license"] img {
+  display: inline-block !important;
+  margin: 0 !important;
+}
