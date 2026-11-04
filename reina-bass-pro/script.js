@@ -34,6 +34,16 @@
   }
   renderCart();
 
+  // Animación "pop" del contador del carrito (keyframes "pop" en style.css)
+  function popBadge() {
+    $$("[data-cart-count]").forEach(function (el) {
+      el.classList.remove("icon-btn__badge--pop");
+      void el.offsetWidth; // fuerza un reflow para poder reiniciar la animación
+      el.classList.add("icon-btn__badge--pop");
+      el.addEventListener("animationend", function () { el.classList.remove("icon-btn__badge--pop"); }, { once: true });
+    });
+  }
+
   $$("[data-add]").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var qty = 1;
@@ -42,6 +52,7 @@
       cartCount += qty;
       store.set("rbp-cart", String(cartCount));
       renderCart();
+      popBadge();
       showToast(qty + " × " + btn.getAttribute("data-name") + " añadido al carrito");
     });
   });

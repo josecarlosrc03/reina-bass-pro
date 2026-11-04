@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo: efecto máquina de escribir con CSS</title>
+  <style>
+    /* Animación investigada para la Práctica 7: efecto "máquina de escribir".
+       No se usa en la tienda; es una demo independiente. */
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #0f172a; color: #ded2aa; }
+
+    .typewriter {
+      --caracteres: 32;                       /* nº de letras del texto */
+      font: 700 clamp(1rem, 3.2vw, 2rem) "Courier New", monospace;  /* monoespaciada: todas las letras miden 1ch */
+      width: calc(var(--caracteres) * 1ch);   /* ancho final = nº de letras × ancho de una letra */
+      overflow: hidden;                       /* lo que sobresale queda oculto: así "se escribe" */
+      white-space: nowrap;                    /* el texto no salta de línea */
+      border-right: .12em solid currentColor; /* el cursor es el borde derecho de la caja */
+      animation:
+        escribir 3.5s steps(var(--caracteres), end) forwards,   /* la caja crece letra a letra */
+        cursor .8s step-end infinite;                           /* el cursor parpadea */
+    }
+
+    @keyframes escribir { from { width: 0; } to { width: calc(var(--caracteres) * 1ch); } }
+    @keyframes cursor   { 50% { border-color: transparent; } }
+
+    @media (prefers-reduced-motion: reduce) { .typewriter { animation: none; } }
+  </style>
+</head>
+<body>
+  <p class="typewriter">Reina Bass Pro: pesca con estilo</p>
+</body>
+</html>

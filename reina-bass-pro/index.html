@@ -106,6 +106,66 @@
     </div>
   </section>
 
+  <!-- ===== Slider de novedades y ofertas (animado solo con CSS: @keyframes) ===== -->
+  <section class="section slider-section" aria-roledescription="carrusel" aria-label="Novedades y ofertas">
+    <div class="container">
+      <h2 class="sr-only">Novedades y ofertas</h2>
+      <div class="slider">
+        <!-- Checkbox oculto: al marcarlo (botón "Pausar") se pausa la animación -->
+        <input class="sr-only slider__pause-input" type="checkbox" id="slider-pause" aria-label="Pausar la animación del carrusel">
+
+        <ul class="slider__track">
+          <li class="slider__slide slider__slide--green" role="group" aria-roledescription="diapositiva" aria-label="1 de 4">
+            <div class="slider__content">
+              <p class="eyebrow eyebrow--light">Novedad</p>
+              <h3 class="slider__title">Caña Abu García 75 MH</h3>
+              <p class="slider__text">Carbono de alta densidad, acción rápida y funda de transporte incluida. Hecha para los depredadores del agua dulce.</p>
+              <a class="btn btn--light" href="producto.html">Ver la caña <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+            <div class="slider__media"><div class="slider__crop"><img class="slider__img" src="img/cana-abu-detalle.png" alt="Caña de spinning Abu García 75 MH" width="900" height="900"></div></div>
+          </li>
+
+          <li class="slider__slide slider__slide--navy" role="group" aria-roledescription="diapositiva" aria-label="2 de 4">
+            <div class="slider__content">
+              <p class="eyebrow eyebrow--light">Oferta · -11%</p>
+              <h3 class="slider__title">Cangrejo Zoom</h3>
+              <p class="slider__text">El señuelo imitador de cangrejo de río, ahora rebajado. Una trampa de lo más realista para el black bass.</p>
+              <p class="price slider__price"><s class="price__old">10€</s> <span class="price__now">8,95€</span></p>
+              <a class="btn btn--light" href="categoria.html?oferta=1">Ver ofertas <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+            <div class="slider__media"><div class="slider__crop"><img class="slider__img" src="img/cangrejo.png" alt="Señuelo cangrejo Zoom" width="2000" height="2000" loading="lazy"></div></div>
+          </li>
+
+          <li class="slider__slide slider__slide--tan" role="group" aria-roledescription="diapositiva" aria-label="3 de 4">
+            <div class="slider__content">
+              <p class="eyebrow eyebrow--light">Señuelo estrella</p>
+              <h3 class="slider__title">Pato Hard Sikkario</h3>
+              <p class="slider__text">Swimbait articulado de acabado realista para provocar la picada de los depredadores más grandes.</p>
+              <a class="btn" href="categoria.html">Ver señuelos <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+            <div class="slider__media"><div class="slider__crop"><img class="slider__img" src="img/swimbait.png" alt="Señuelo swimbait Pato Hard Sikkario" width="800" height="800" loading="lazy"></div></div>
+          </li>
+
+          <li class="slider__slide slider__slide--sand" role="group" aria-roledescription="diapositiva" aria-label="4 de 4">
+            <div class="slider__content">
+              <p class="eyebrow eyebrow--light">Carretes</p>
+              <h3 class="slider__title">Carrete Major</h3>
+              <p class="slider__text">Recuperación suave y fiable para las jornadas largas de spinning, por solo 120€.</p>
+              <a class="btn" href="categoria.html">Ver carretes <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+            <div class="slider__media"><div class="slider__crop"><img class="slider__img" src="img/carrete.png" alt="Carrete de spinning Major" width="1200" height="1200" loading="lazy"></div></div>
+          </li>
+        </ul>
+
+        <!-- Indicadores (decorativos): se animan igual que las diapositivas -->
+        <ol class="slider__dots" aria-hidden="true">
+          <li class="slider__dot"></li><li class="slider__dot"></li><li class="slider__dot"></li><li class="slider__dot"></li>
+        </ol>
+        <label class="slider__pause" for="slider-pause"></label>
+      </div>
+    </div>
+  </section>
+
   <!-- ===== Categorías (columnas del diseño) ===== -->
   <section class="categories" id="categorias" aria-label="Modalidades de pesca">
     <article class="category">
@@ -210,7 +270,7 @@
         <a class="link-arrow" href="categoria.html">Ver todo <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
       </header>
       <div class="products">
-<article class="card" href="producto.html">
+<article class="card">
   <a class="card__media" href="producto.html"><img class="card__img" src="img/swimbait.png" alt="Señuelo swimbait Pato Hard Sikkario" loading="lazy"></a>
   <div class="card__body">
     <p class="card__brand">Sikkario</p>
@@ -503,7 +563,7 @@
       <p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
         <a property="dct:title" rel="cc:attributionURL" href="#">Reina Bass Pro</a> por 
         <span property="cc:attributionName">José Carlos Reina</span> se distribuye bajo una 
-        <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
+        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
           Licencia CC BY-NC-SA 4.0
           <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt="">
           <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt="">

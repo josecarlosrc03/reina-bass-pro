@@ -11,15 +11,17 @@
       5.1 Botones · 5.2 Insignias · 5.3 Valoración y precio · 5.4 Tarjeta de producto
       5.5 Opciones (checkbox/radio) · 5.6 Formularios · 5.7 Aviso (toast)
    6. Bloques de página (de arriba abajo)
-      topbar · header · subnav · hero · categorías · ventajas · promo · marcas
+      topbar · header · subnav · hero · slider · categorías · ventajas · promo · marcas
       consejos · contacto · newsletter · footer
    7. Páginas internas
       7.1 Cabecera de página y migas · 7.2 Listado · 7.3 Ficha de producto
-   8. Responsive (1100px · 900px · 600px)
+   8. Animaciones (@keyframes)
+   9. Responsive (1100px · 900px · 600px)
 
    Maquetación: se usa FLEXBOX para casi todos los bloques (cabecera, menús,
    portada, categorías, ventajas, marcas, consejos, contacto, formularios,
-   pie…) y CSS GRID solo para las rejillas de tarjetas de producto.
+   pie…) y CSS GRID solo para las rejillas de tarjetas de producto y para apilar
+   las diapositivas del slider.
    ========================================================================== */
 
 
@@ -438,6 +440,79 @@ address { font-style: normal; }
 .footer__legal { display: flex; gap: 20px; }
 
 
+/* ---------- Slider de novedades y ofertas (CSS puro con @keyframes) ----------
+   Las 4 diapositivas se apilan en la misma celda de una rejilla y cada una
+   se anima con el MISMO @keyframes (slider-slide) pero con un retraso distinto. */
+.slider-section { padding-block: 56px; }
+.slider {
+  --slider-cycle: 12s;      /* 4 diapositivas × 3 s */
+  --slider-state: running;  /* pasa a "paused" con el ratón, el foco o el botón de pausa */
+  position: relative; overflow: hidden;
+  border: var(--border); box-shadow: var(--shadow-lg);
+}
+.slider:hover .slider__track,
+.slider:hover .slider__dots,
+.slider:has(.slider__content :focus-visible) .slider__track,
+.slider:has(.slider__content :focus-visible) .slider__dots,
+.slider__pause-input:checked ~ .slider__track,
+.slider__pause-input:checked ~ .slider__dots { --slider-state: paused; }
+
+.slider__track { display: grid; margin: 0; padding: 0; list-style: none; }
+.slider__slide {
+  grid-area: 1 / 1;                       /* todas las diapositivas en la misma celda */
+  display: flex; align-items: center; gap: 48px;
+  min-height: 440px; padding: 56px 56px 84px;
+  animation: slider-slide var(--slider-cycle) ease-in-out infinite both;
+  animation-play-state: var(--slider-state);
+}
+.slider__slide--green { background: var(--color-green);      color: var(--color-white); }
+.slider__slide--navy  { background: var(--color-navy);       color: var(--color-white); }
+.slider__slide--tan   { background: var(--color-tan);        color: var(--color-navy); }
+.slider__slide--sand  { background: var(--color-sand-light); color: var(--color-navy); }
+
+/* Retrasos: cada diapositiva entra 3 s después de la anterior (25 % del ciclo).
+   La primera usa -0,36 s (3 % del ciclo) para que ya se vea completa al cargar la página. */
+.slider__slide:nth-child(1), .slider__slide:nth-child(1) .slider__img, .slider__dot:nth-child(1) { animation-delay: -0.36s; }
+.slider__slide:nth-child(2), .slider__slide:nth-child(2) .slider__img, .slider__dot:nth-child(2) { animation-delay: 2.64s; }
+.slider__slide:nth-child(3), .slider__slide:nth-child(3) .slider__img, .slider__dot:nth-child(3) { animation-delay: 5.64s; }
+.slider__slide:nth-child(4), .slider__slide:nth-child(4) .slider__img, .slider__dot:nth-child(4) { animation-delay: 8.64s; }
+
+.slider__content { display: flex; flex: 1; flex-direction: column; align-items: flex-start; gap: 14px; min-width: 0; }
+.slider__title { font-size: clamp(28px, 3.6vw, 44px); font-weight: 800; line-height: 1.08; letter-spacing: -.02em; }
+.slider__text { max-width: 460px; font-size: 18px; }
+.slider__price { font-size: 28px; }
+.slider__slide--navy .price__old { color: #94a3b8; }
+
+.slider__media { flex: 0 0 min(360px, 38%); padding: 16px; border: var(--border); box-shadow: var(--shadow); background: var(--color-paper); transform: rotate(1.5deg); }
+.slider__crop { overflow: hidden; }
+.slider__img {
+  width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; /* height:auto anula el atributo height del <img> */
+  animation: slider-zoom var(--slider-cycle) ease-out infinite both;
+  animation-play-state: var(--slider-state);
+}
+
+/* Indicadores: el activo se alarga con la misma animación que su diapositiva */
+.slider__dots {
+  position: absolute; bottom: 20px; left: 50%; z-index: 2; display: flex; gap: 8px;
+  margin: 0; padding: 7px 12px; list-style: none; transform: translateX(-50%);
+  border: 2px solid var(--color-paper); background: var(--color-navy);
+}
+.slider__dot {
+  width: 10px; height: 10px; border-radius: 5px; background: rgba(255, 255, 255, .4);
+  animation: slider-dot var(--slider-cycle) ease-in-out infinite both;
+  animation-play-state: var(--slider-state);
+}
+
+/* Botón de pausa sin JavaScript: un checkbox oculto + su <label> */
+.slider__pause {
+  position: absolute; right: 16px; bottom: 16px; z-index: 2; padding: 6px 12px;
+  border: var(--border); background: var(--color-white); color: var(--color-navy);
+  font-size: 13px; font-weight: 800; cursor: pointer;
+}
+.slider__pause::after { content: "⏸ Pausar"; }
+.slider__pause-input:checked ~ .slider__pause::after { content: "▶ Reanudar"; }
+.slider__pause-input:focus-visible ~ .slider__pause { outline: 3px solid var(--color-green); outline-offset: 2px; }
+
 /* ==========================================================================
    7. PÁGINAS INTERNAS
    ========================================================================== */
@@ -522,7 +597,103 @@ legend.filters__title { float: left; width: 100%; }
 
 
 /* ==========================================================================
-   8. RESPONSIVE
+   8. ANIMACIONES (biblioteca de @keyframes y dónde se usa cada una)
+   Solo se animan transform y opacity (las propiedades más baratas para el
+   navegador) y se respeta prefers-reduced-motion (ver sección 9).
+   ========================================================================== */
+
+/* --- Slider: entra por la derecha, se queda 5 s y sale por la izquierda.
+       Cada diapositiva dura el 25 % del ciclo (4 × 25 % = 100 %). --- */
+@keyframes slider-slide {
+  0%        { opacity: 0; visibility: hidden;  transform: translateX(60px); }
+  3%, 25%   { opacity: 1; visibility: visible; transform: translateX(0); }
+  28%, 100% { opacity: 0; visibility: hidden;  transform: translateX(-60px); }
+}
+/* --- Slider: efecto "Ken Burns" (zoom lento) sobre la foto --- */
+@keyframes slider-zoom {
+  0%        { transform: scale(1); }
+  28%, 100% { transform: scale(1.12); }
+}
+/* --- Slider: el indicador activo se alarga --- */
+@keyframes slider-dot {
+  0%        { width: 10px; background: rgba(255, 255, 255, .4); }
+  3%, 25%   { width: 28px; background: #fff; }
+  28%, 100% { width: 10px; background: rgba(255, 255, 255, .4); }
+}
+
+/* --- Entrada de la portada: sube 24 px mientras aparece --- */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+.hero__content > * { animation: fade-up .7s ease-out both; }
+.hero__content > :nth-child(2) { animation-delay: .1s; }
+.hero__content > :nth-child(3) { animation-delay: .2s; }
+.hero__content > :nth-child(4) { animation-delay: .3s; }
+.hero__content > :nth-child(5) { animation-delay: .4s; }
+
+/* --- Foto de la portada: aparece con un pequeño zoom --- */
+@keyframes pop-in {
+  from { opacity: 0; transform: scale(.92) translateY(16px); }
+  to   { opacity: 1; transform: none; }
+}
+.hero__visual { animation: pop-in .9s .25s ease-out both; }
+
+/* --- Pegatina "Compra segura": flota arriba y abajo sin parar.
+       Hay que repetir rotate(-3deg) porque la animación sustituye al transform del elemento. --- */
+@keyframes float {
+  from { transform: translateY(0) rotate(-3deg); }
+  to   { transform: translateY(-10px) rotate(-3deg); }
+}
+.hero__sticker { animation: float 3.5s ease-in-out infinite alternate; }
+
+/* --- Logo: el pez "coletea" al pasar el ratón --- */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0); }
+  25%      { transform: rotate(-14deg); }
+  75%      { transform: rotate(14deg); }
+}
+.logo:hover .logo__mark { animation: wiggle .5s ease-in-out; }
+
+/* --- Contador del carrito: "rebota" al añadir un producto (la clase la pone script.js) --- */
+@keyframes pop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}
+.icon-btn__badge--pop { animation: pop .4s ease-out; }
+
+/* --- Oferta: el "-30%" late suavemente para llamar la atención --- */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.06); }
+}
+.promo__value { transform-origin: left center; animation: pulse 2.4s ease-in-out infinite; }
+
+/* --- "Últimas unidades": el punto de stock parpadea --- */
+@keyframes blink {
+  50% { opacity: .25; }
+}
+.stock--low::before { animation: blink 1.2s ease-in-out infinite; }
+
+/* --- Aparición al hacer scroll (scroll-driven animations).
+       Solo en navegadores que lo soportan; en el resto el contenido se ve normal.
+       El relleno "backwards" evita que bloquee el efecto :hover de las tarjetas. --- */
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: none; }
+}
+@supports (animation-timeline: view()) {
+  .card, .tip, .category, .perk, .section__header {
+    animation: reveal linear backwards;
+    animation-timeline: view();
+    animation-range: entry 0% entry 40%;
+  }
+}
+
+
+/* ==========================================================================
+   9. RESPONSIVE
    ========================================================================== */
 
 /* ---------- Tablet grande (≤ 1100px) ---------- */
@@ -569,6 +740,9 @@ legend.filters__title { float: left; width: 100%; }
   .filters { position: static; flex: 0 0 auto; }
 
   .detail { flex-direction: column; align-items: stretch; }
+
+  .slider__slide { flex-direction: column-reverse; align-items: stretch; gap: 28px; min-height: 0; padding: 32px 24px 84px; }
+  .slider__media { align-self: center; flex: 0 0 auto; width: min(300px, 80%); }
 }
 
 /* ---------- Móvil (≤ 600px) ---------- */
@@ -603,10 +777,20 @@ legend.filters__title { float: left; width: 100%; }
   .trust__item { flex-basis: 100%; }
 
   .toast { left: 16px; right: 16px; bottom: 16px; }
+
+  .slider-section { padding-block: 40px; }
+  .slider__text { font-size: 16px; }
+  .slider__pause { right: 8px; bottom: 12px; padding: 5px 8px; }
 }
 
+/* ---------- Movimiento reducido: sin animaciones ---------- */
 @media (prefers-reduced-motion: reduce) {
-  * { transition: none !important; scroll-behavior: auto !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+
+  /* El slider pasa a ser una tira que se desliza con el dedo o el ratón (scroll-snap) */
+  .slider__track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; }
+  .slider__slide { flex: 0 0 100%; scroll-snap-align: start; }
+  .slider__dots, .slider__pause, .slider__pause-input { display: none; }
 }
 /* Ajuste para alinear la licencia Creative Commons en el footer */
 .footer__bottom-inner p {
