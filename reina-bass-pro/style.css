@@ -792,22 +792,28 @@ legend.filters__title { float: left; width: 100%; }
   .slider__slide { flex: 0 0 100%; scroll-snap-align: start; }
   .slider__dots, .slider__pause, .slider__pause-input { display: none; }
 }
-/* Ajuste para alinear la licencia Creative Commons en el footer */
-.footer__bottom-inner p {
+/* ---------- Licencia Creative Commons (footer) ---------- */
+.license {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 6px;
+  gap: 6px 10px;
+  margin: 0;
 }
+.license__text { color: inherit; }
+.license__link { text-decoration: underline; text-underline-offset: 2px; }
+.license__link:hover { text-decoration-thickness: 2px; }
 
-.footer__bottom-inner a[rel="license"] {
+/* Grupo de iconos: siempre en fila, nunca en columna */
+.license__icons {
   display: inline-flex;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 4px;
-  text-decoration: none;
 }
-
-.footer__bottom-inner a[rel="license"] img {
-  display: inline-block !important;
-  margin: 0 !important;
+.license__icon {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  margin: 0;
 }
